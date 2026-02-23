@@ -33,10 +33,18 @@ function render(variables = {}) {
   let role = variables.role ? variables.role : "Developer";
   let city = variables.city ? variables.city : "Miami";
   let country = variables.country ? variables.country : "USA";
-  let twitter = variables.twitter ? variables.twitter : "";
-  let github = variables.github ? variables.github : "";
-  let linkedin = variables.linkedin ? variables.linkedin : "";
-  let instagram = variables.instagram ? variables.instagram : "";
+  let twitter = variables.twitter
+    ? variables.twitter
+    : "https://twitter.com/4geeksacademy";
+  let github = variables.github
+    ? variables.github
+    : "https://github.com/4geeksacademy";
+  let linkedin = variables.linkedin
+    ? variables.linkedin
+    : "https://linkedin.com/school/4geeksacademy";
+  let instagram = variables.instagram
+    ? variables.instagram
+    : "https://instagram.com/4geeksacademy";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -46,10 +54,10 @@ function render(variables = {}) {
           <h2>${role}</h2>
           <h3>${city},${country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a>${twitter}</li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a>${github}</li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a>${linkedin}</li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a>${instagram}</li>
+            <li><a href=${twitter}><i class="fab fa-twitter"></i></a></li>
+            <li><a href=${github}><i class="fab fa-github"></i></a></li>
+            <li><a href=${linkedin}><i class="fab fa-linkedin"></i></a></li>
+            <li><a href=${instagram}><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
